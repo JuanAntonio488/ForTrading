@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen</title>
+</head>
+<body>
+    <h1>Exámen</h1>
+    <form action="/action_page.php">
+        <!-- =======Nombre======= -->
+        <label for="fname">Nombre:</label>
+        <input type="text" id="fname" name="fname" placeholder="Nombre" required>
+        <br>
+        <!-- =======Apellido======= -->
+        <label for="lname">Apellido</label>
+        <input type="text" id="lname" name="lname" placeholder="Apellido">
+        <br>
+        <!-- =======Genero======= -->
+        <label for="genero">Género:</label>
+        <select id="genero" name="genero" required>
+            <option disabled selected value> -- selecciona una opción -- </option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+        </select>
+        <br>
+        <!-- =======Estado Civil======= -->
+        <span>Estado civil</span>
+        <label for="soltero">
+            <input id="soltero" type="radio" name="ecivil" value="soltero" required> Soltero
+        </label>
+        <label for="casado">
+            <input id="casado" type="radio" name="ecivil" value="casado"> Casado
+        </label>
+        <label for="viudo">
+            <input id="viudo" type="radio" name="ecivil" value="viudo"> Viudo
+        </label>
+        <label for="divorciado">
+            <input id="divorciado" type="radio" name="ecivil" value="divorciado"> Divorciado
+        </label>
+        <br>
+        <!-- =======Enviar======= -->
+        <input type="submit" value="Registrar">
+      </form>
+
+    
+</body>
+</html>
