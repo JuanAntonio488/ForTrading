@@ -18,7 +18,7 @@ $tablePersons = "CREATE TABLE IF NOT EXISTS persons(
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50),
     gender ENUM('M','F') NOT NULL,
-    birthday DATETIME NOT NULL,
+    birthday DATE NOT NULL,
     partner_status ENUM('soltero','casado','viudo','divorciado') NOT NULL
 )";
 if(mysqli_query($conn, $tablePersons)){
@@ -28,5 +28,6 @@ if(mysqli_query($conn, $tablePersons)){
 }
 
 mysqli_close($conn);
+unset($conn);
 
 ?>

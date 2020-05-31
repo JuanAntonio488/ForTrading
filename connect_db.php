@@ -1,4 +1,5 @@
 <?php
+session_start();
 //Los test se realizaron usando XAMPP, si su usuario y contraseña son diferentes debe cambiarlo.
 $servername = "localhost";
 $username = "root";
