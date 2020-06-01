@@ -12,6 +12,9 @@
 <body>
     <nav class ="navbar navbar-dark bg-dark">
         <div class="container">
-            <a href="index.php" class="navbar-brand"> PHP MYSQL CRUD </a>
+            <a href="../index.php" class="navbar-brand"> PHP MYSQL CRUD</a>
+        </div>
+        <div class="container" style="color:white">
+            <i>[Oriza Armas Juan Antonio]</i>
         </div>
     </nav>

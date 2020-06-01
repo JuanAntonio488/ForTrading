@@ -1,4 +1,4 @@
-<?php include("db.php"); ?>
+<?php include("php/db.php"); ?>
 <?php include("include/header.php"); ?>
 
 <div class = "container p-4">
@@ -15,7 +15,7 @@
         <?php session_unset(); } ?>
 
             .<div class = "card card-body">
-                <form action="save_tasks.php" method="POST">
+                <form action="php/save_tasks.php" method="POST">
                     <div class="form-group">
                         <input type = "text" name="firstName" class="form-control" maxlength="20" placeholder="Nombre" autofocus required>
                     </div>
@@ -36,16 +36,16 @@
                         <div id="chkLst">
                             <div>Estado</div>
                             <div class="checkbox">
-                                <label><input type="checkbox" name="ecivil" value="soltero" onclick="selectOnlyThis(this)">Soltero</label>
+                                <label><input type="checkbox" name="ecivil" value="soltero" onclick="selectOnlyThis(this)" style="margin-right: 5px;">Soltero</label>
                             </div>
                             <div class="checkbox">
-                                <label><input type="checkbox" name="ecivil" value="casado" onclick="selectOnlyThis(this)">Casado</label>
+                                <label><input type="checkbox" name="ecivil" value="casado" onclick="selectOnlyThis(this)" style="margin-right: 5px;">Casado</label>
                             </div>
                             <div class="checkbox">
-                                <label><input type="checkbox" name="ecivil" value="viudo" onclick="selectOnlyThis(this)">Viudo</label>
+                                <label><input type="checkbox" name="ecivil" value="viudo" onclick="selectOnlyThis(this)" style="margin-right: 5px;">Viudo</label>
                             </div>
                             <div class="checkbox">
-                                <label><input type="checkbox" name="ecivil" value="divorciado" onclick="selectOnlyThis(this)">Divorciado</label>
+                                <label><input type="checkbox" name="ecivil" value="divorciado" onclick="selectOnlyThis(this)" style="margin-right: 5px;">Divorciado</label>
                             </div>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
         </div>
 
         <div class = "col-md-8">
-            <table class="table table-bordered">
+            <table class="table table-bordered table-responsive">
                 <thead>
                     <tr>
                         <th style="text-align:center;">Identificador</th>
@@ -69,7 +69,7 @@
                 </thead>
                 <tbody>
                     <?php
-                        include "connect_db.php";
+                        include "php/connect_db.php";
                         $dataBase_selection = "USE forTrading_Test;";
                         mysqli_query($conn, $dataBase_selection);
 
@@ -79,17 +79,25 @@
 
                         while($row = mysqli_fetch_array($result)){ ?>
                         <tr>
-                            <td><?php echo $row['id'] ?></td>
-                            <td><?php echo $row['first_name'] ?></td>
-                            <td><?php echo $row['last_name'] ?></td>
-                            <td><?php echo $row['gender'] ?></td>
-                            <td><?php echo $row['birthday'] ?></td>
-                            <td><?php echo $row['partner_status'] ?></td>
+                            <td style="text-align:center;"><b><?php echo $row['id'] ?></b></td>
+                            <td style="text-align:center;"><?php echo $row['first_name'] ?></td>
+                            <td style="text-align:center;"><?php echo $row['last_name'] ?></td>
+                            <td style="text-align:center;"><?php echo $row['gender'] ?></td>
+                            <td style="text-align:center;"><?php echo $row['birthday'] ?></td>
+                            <td style="text-align:center;"><?php echo $row['partner_status'] ?></td>
                             <td>
-                                <a href="edit.php?id=<?php echo $row['id']?>" class="btn btn-secondary">
-                                <i class="material-icons">edit</i>
-                                <a href="delete_tasks.php?id=<?php echo $row['id']?>" class="btn btn-danger">
-                                <i class="material-icons">delete</i>
+                                <div style="display:flex;">
+                                    <div style="padding-right:8px;">
+                                        <a href="php/edit.php?id=<?php echo $row['id']?>" class="btn btn-secondary" style="background-color:#20B2AA !important; border-color:#20B2AA !important">
+                                            <i class="material-icons" style="font-size: 20px;">edit</i>
+                                        </a>
+                                    </div>
+                                    <div style="padding-left:8px;">
+                                        <a href="php/delete_tasks.php?id=<?php echo $row['id']?>" class="btn btn-danger">
+                                            <i class="material-icons" style="font-size: 20px;">delete</i>
+                                        </a>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                     <?php } ?>
