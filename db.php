@@ -29,5 +29,5 @@ if(mysqli_query($conn, $tablePersons)){
 
 mysqli_close($conn);
 unset($conn);
-
+session_destroy();
 ?>

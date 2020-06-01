@@ -26,5 +26,4 @@ mysqli_query($conn, $dataBase_selection);
         
         header("Location:index.php");
     }
-
 ?>

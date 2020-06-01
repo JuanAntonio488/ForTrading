@@ -99,5 +99,9 @@
 
     </div>
 </div>
+<?php 
+session_unset();
+session_destroy();
+ ?>
 <?php include("include/footer.php"); ?>
 
