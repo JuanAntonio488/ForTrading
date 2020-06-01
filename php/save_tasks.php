@@ -21,7 +21,7 @@ mysqli_query($conn, $dataBase_selection);
         if(!$result){
             die("Query failed");
         }
-        $_SESSION['message'] = 'Guardado';
+        $_SESSION['message'] = '¡Datos Guardados correctamente!';
         $_SESSION['message_type'] = 'success';  
         
         header("Location: ../index.php");
